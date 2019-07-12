@@ -3,7 +3,6 @@ import GetBookmark from './API/GetBookmark.js';
 
 export default class Bookmark {
     constructor(dom) {
-        window.getList = [{ id: 1, name: 'ほげ', url: 'http://google.com', addedDay: '10290938' }];
         this.dom = dom;
         this.renderApp();
     }
@@ -11,7 +10,7 @@ export default class Bookmark {
     async renderApp() {
         const data = await GetBookmark.getList();
         const view = View.createDOM(data);
-        view.addEventListener('BookmarkSubmitted', e => this.renderApp(e), true);
+        view.addEventListener('BookmarkChanged', e => this.renderApp(e), true);
         this.dom.innerHTML = '';
         this.dom.append(view);
     }
