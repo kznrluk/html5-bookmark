@@ -7,7 +7,7 @@ const db = new database('sqlite.db');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(express.static('static'));
+app.use(express.static('Static'));
 
 app.post('/parrot', (req, res) => {
     console.log(req.body);
