@@ -23,7 +23,7 @@ export default class AddForm {
         const url = AddFormUrl.value;
         PostBookmark.add(name, url).then(r => {
             const submitted = new Event('BookmarkChanged');
-            event.currentTarget.dispatchEvent(submitted);
+            event.target.dispatchEvent(submitted);
         });
     }
 }
