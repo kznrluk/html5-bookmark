@@ -1,5 +1,5 @@
 import Button from './Button.js';
-import PostBookmark from '../../API/PostBookmark.js';
+import PostBookmark from '../../api/PostBookmark.js';
 
 export default class EditForm {
     static createDOM(targetId, viewer) {

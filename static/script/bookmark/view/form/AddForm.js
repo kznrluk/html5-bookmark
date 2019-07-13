@@ -1,4 +1,4 @@
-import PostBookmark from '../../API/PostBookmark.js';
+import PostBookmark from '../../api/PostBookmark.js';
 
 export default class AddForm {
     static createDOM() {

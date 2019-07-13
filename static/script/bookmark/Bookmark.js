@@ -1,5 +1,5 @@
-import View from './View/View.js';
-import GetBookmark from './API/GetBookmark.js';
+import View from './view/View.js';
+import GetBookmark from './api/GetBookmark.js';
 
 export default class Bookmark {
     constructor(dom) {

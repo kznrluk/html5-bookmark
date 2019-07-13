@@ -1,3 +1,3 @@
-import Bookmark from './Bookmark/Bookmark.js';
+import Bookmark from './bookmark/Bookmark.js';
 
 const bookmark = new Bookmark(document.getElementById('app'));

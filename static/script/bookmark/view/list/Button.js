@@ -1,8 +1,8 @@
-import PostBookmark from '../../API/PostBookmark.js';
+import PostBookmark from '../../api/PostBookmark.js';
 
 export default class Button {
     static createDeleteButton(targetId) {
-        return Button.createButtonFromString('✖️', targetId, (event) => {
+        return Button.createButtonFromString('✖', targetId, (event) => {
             const { currentTarget } = event;
             PostBookmark.delete(currentTarget.getAttribute('targetId'));
             const submitted = new Event('BookmarkChanged');
@@ -11,20 +11,14 @@ export default class Button {
     }
 
     static createEditButton(viewer, editor) {
-        const button = document.createElement('button');
-        button.textContent = '✒';
-        button.addEventListener('click', (event) => {
+        return Button.createButtonFromString('✒', null, (event) => {
+            const button = event.currentTarget;
             button.textContent = button.textContent === '✒' ? 'キャンセル' : '✒';
+
             const inEditorMode = button.textContent !== '✒';
-            if (inEditorMode) {
-                viewer.style.display = 'none';
-                editor.style.display = 'inline';
-            } else {
-                viewer.style.display = 'inline';
-                editor.style.display = 'none';
-            }
+            viewer.style.display = (inEditorMode) ? 'none' : 'inline';
+            editor.style.display = (!inEditorMode) ? 'none' : 'inline';
         });
-        return button;
     }
 
     static createButtonFromString(str, targetId, func) {

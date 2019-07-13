@@ -1,5 +1,5 @@
-import AddForm from './AddForm/AddForm.js';
-import BookmarkList from './BookmarkList/BookmarkList.js';
+import AddForm from './form/AddForm.js';
+import BookmarkList from './list/BookmarkList.js';
 
 export default class View {
     static createDOM(data) {

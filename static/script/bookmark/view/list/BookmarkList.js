@@ -8,7 +8,7 @@ export default class BookmarkList {
             const liElement = document.createElement('li');
             liElement.setAttribute('class', 'record');
 
-            const viewer = document.createElement('div');
+            const viewer = document.createElement('span');
             viewer.setAttribute('class', 'view');
             viewer.innerHTML = `
                 <span class="name">${l.name}</span>

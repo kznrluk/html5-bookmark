@@ -1,13 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const database = require('./Lib/Database.js');
+const database = require('./lib/Database.js');
 
 const app = express();
 const db = new database('sqlite.db');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(express.static('Static'));
+app.use(express.static('static'));
 
 app.post('/parrot', (req, res) => {
     console.log(req.body);
@@ -33,7 +33,7 @@ app.post('/editBookmark', (req, res) => {
     db.edit(id, name, url);
     console.log(req.body);
     res.json(req.body);
-})
+});
 
 app.get('/getList', (req, res) => {
     db.getList().then((data) => {
